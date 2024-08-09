@@ -15,8 +15,8 @@ assert list(rle_decode(rle)) == orig
 Just for fun, throw in an infinite sequence.
 
 ```python
-from rle import fib_it
-print(list(islice(fib_it, 10)))
+from rle import make_fib
+print(list(islice(make_fib(), 10)))
 ```
 
 No Copyright, Public Domain
