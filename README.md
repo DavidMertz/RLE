@@ -10,4 +10,13 @@ assert list(rle_encode(orig)) == rle
 assert list(rle_decode(rle)) == orig
 ```
 
+# Fibonacci
+
+Just for fun, throw in an infinite sequence.
+
+```python
+from rle import fib_it
+print(list(islice(fib_it, 10)))
+```
+
 No Copyright, Public Domain
