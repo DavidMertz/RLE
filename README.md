@@ -16,7 +16,7 @@ Just for fun, throw in an infinite sequence.
 
 ```python
 from rle import make_fib
-print(list(islice(make_fib(), 10)))
+assert list(islice(make_fib(), 8)) == [1, 1, 2, 3, 5, 8, 13, 21]
 ```
 
 No Copyright, Public Domain
