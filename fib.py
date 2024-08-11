@@ -1,4 +1,4 @@
-from itertools import accumulate, islice, repeat
+from itertools import accumulate, islice, repeat, chain
 
 
 def first(it):
@@ -8,6 +8,18 @@ def first(it):
 def recur(seed=(1, 1)):
     "Generate Fibonacci numbers or generalizations thereof"
     return map(first, accumulate(repeat(seed), lambda s, _: (s[1], sum(s))))
+
+
+def recur2(seed=(1, 1)):
+    """
+    Generate Fibonacci numbers or generalizations thereof
+
+    This version illustrates that the seed is only actually used once.
+    Using `repeat()` is simply an easy way to create an infinite iterator;
+    subsequently the seed is ignored, and the running accumulation is kept.
+    """
+    items = chain([seed], repeat(None))
+    return map(first, accumulate(items, lambda s, _: (s[1], sum(s))))
 
 
 if __name__ == "__main__":
